@@ -111,6 +111,10 @@ pytest
 
 Os testes cobrem as faixas de comissão, o total por vendedor, entradas e saídas de estoque, unicidade e persistência dos IDs, validações e o cálculo de juros.
 
+## Sobre a escolha da linguagem
+
+O enunciado não especificava uma linguagem, então optei por **Python** por ser a que tenho mais familiaridade, o que me permitiu focar na lógica, na organização e nos testes. A solução foi pensada de forma independente de linguagem: as regras de negócio estão isoladas em funções pequenas (`calcular_comissao`, `Deposito.movimentar`, `calcular_juros`) e podem ser portadas para C# com poucos ajustes (por exemplo, `Decimal` do Python corresponde ao tipo `decimal` do C#).
+
 ## Decisões e premissas
 
 - **Precisão monetária:** uso `Decimal` em vez de `float`, evitando erros de arredondamento em valores financeiros. O arredondamento é feito só no final, para não acumular diferenças.
